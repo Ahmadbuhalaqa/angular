@@ -1,0 +1,122 @@
+
+<div class="row">
+<div class="col-6">
+    <div class="mb-3">
+        <label  class="form-label">Name</label>
+        <input type="text" class="form-control"  #txtsearchName>
+        <input type="button" value="Serach" class="btn btn-primary mt-3"  (click)="OnSearch()" >
+      </div>
+    </div>
+    </div>
+
+
+
+    <div class="row mb-3">
+
+        <div class="col-10">
+    
+            <table class="table table-bordered  table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Name Of Country</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of liCountry" >
+                        <td>{{item.code}}</td>
+                        <td>{{item.name}}</td>
+                        <td>
+                            <input type="button" value="City" class="btn btn-primary" >
+                        </td>
+                    </tr>
+    
+                </tbody>
+    
+    
+            </table>
+    
+        </div>
+    
+    </div>
+
+
+
+
+<hr>
+<form [formGroup]="forms">
+    <div class="row">
+        <div class="col-3">
+            <div class="mb-3">
+                <h5  class="form-label">New country</h5>
+               <div class="mt-3">
+                <label>Code</label>
+                <input type="text" class="form-control" formControlName="code">
+               </div>
+               <div class="mt-3">
+                <label>Name</label>
+                <input type="text" class="form-control" formControlName="name">
+               </div>
+                <input type="button" value="Save" class="btn btn-primary mt-3" (click)="OnSave()"   >
+              </div>
+            </div>
+            </div>
+</form>
+
+
+
+<div class="row mb-3">
+
+    <div class="col-10">
+
+        <table class="table table-bordered  table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Name Of Country</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="button" value="delete" class="btn btn-primary" >
+                    </td>
+                </tr>
+
+            </tbody>
+
+
+        </table>
+
+    </div>
+
+</div>
+
+
+
+<hr>
+
+<form [formGroup]="forms">
+    <div class="row">
+        <div class="col-3">
+            <div class="mb-3">
+                <h5  class="form-label">New City</h5>
+                <div class="mt-3">
+                    <label>Name</label>
+                    <input type="text" class="form-control" formControlName="name">
+                   </div>
+                   <div class="mt-3">
+                    <label  class="form-label">Country</label>
+                    <select class="form-select" formControlName="country">
+                        <option>
+                            
+                        </option>
+                      </select>
+                   </div>
+                <input type="button" value="Save" class="btn btn-primary mt-3" (click)="OnSaveCity()"   >
+              </div>
+            </div>
+            </div>
+</form>
